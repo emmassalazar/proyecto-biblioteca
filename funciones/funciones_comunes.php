@@ -23,21 +23,7 @@ function mostrarlibros(){
                 $fecha_libro=$row['fecha_libro'];
                 $html_libro=$row['html_libro'];
 
-            if(!isset($_SESSION['username_usuario'])){
-                echo "<div class='col-md-4 box'>
-                    <div class='image'>
-                        <img src='./admin_area/portadas_libros/$portada_libro' alt=''>
-                    </div>
-                    <div class='content'>
-                        <h3>$autor_libro</h3>
-                        <div class='genre'>$titulo_libro</div>
-                        <div class='icons'>
-                            <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a><br>
-                            <a href='detalles_libro.php?id_libro=$id_libro' class='btn'>Detalles</a>
-                        </div>
-                    </div>
-                </div>";
-            }else{
+
                 echo "<div class='col-md-4 box'>
                     <div class='image'>
                         <img src='./admin_area/portadas_libros/$portada_libro' alt=''>
@@ -47,8 +33,9 @@ function mostrarlibros(){
                         <div class='genre'>$titulo_libro</div>
                         <div class='icons'>
                             <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a>
-                            <a href='catalog.php?add_to_favoritos=$id_libro' class='fas fa-heart'></a>
+
                             <a href='./admin_area/pdfs_libros/$pdf_libro' download='$pdf_libro' class='fas fa-download'></a>
+                            <br>
                             <a href='detalles_libro.php?id_libro=$id_libro' class='btn'>Detalles</a>
                         </div>
                     </div>
@@ -57,7 +44,7 @@ function mostrarlibros(){
         }
     }
 }
-}
+
 function libros_generos_especificos(){
     global $con;
     // condition to check isset or not
@@ -85,21 +72,6 @@ function libros_generos_especificos(){
                 $fecha_libro=$row['fecha_libro'];
                 $html_libro=$row['html_libro'];
 
-                if(!isset($_SESSION['username_usuario'])){
-                    echo "<div class='col-md-4 box'>
-                        <div class='image'>
-                            <img src='./admin_area/portadas_libros/$portada_libro' alt=''>
-                        </div>
-                        <div class='content'>
-                            <h3>$autor_libro</h3>
-                            <div class='genre'>$titulo_libro</div>
-                            <div class='icons'>
-                                <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a><br>
-                                <a href='detalles_libro.php?id_libro=$id_libro' class='btn'>Detalles</a>
-                            </div>
-                        </div>
-                    </div>";
-                }else{
                     echo "<div class='col-md-4 box'>
                         <div class='image'>
                             <img src='./admin_area/portadas_libros/$portada_libro' alt=''>
@@ -109,14 +81,15 @@ function libros_generos_especificos(){
                             <div class='genre'>$titulo_libro</div>
                             <div class='icons'>
                                 <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a>
-                                <a href='catalog.php?add_to_favoritos=$id_libro' class='fas fa-heart'></a>
                                 <a href='./admin_area/pdfs_libros/$pdf_libro' download='$pdf_libro' class='fas fa-download'></a>
+                            <br>
+
                                 <a href='detalles_libro.php?id_libro=$id_libro' class='btn'>Detalles</a>
                             </div>
                         </div>
                     </div>";
                 }
-}}}
+}}
 
 function libros_az_especificos(){
     global $con;
@@ -153,8 +126,9 @@ function libros_az_especificos(){
                             <div class='genre'>$titulo_libro</div>
                             <div class='icons'>
                                 <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a>
-                                <a href='catalog.php?add_to_favoritos=$id_libro' class='fas fa-heart'></a>
                                 <a href='./admin_area/pdfs_libros/$pdf_libro' download='$pdf_libro' class='fas fa-download'></a>
+                            <br>
+
                                 <a href='detalles_libro.php?id_libro=$id_libro' class='btn'>Detalles</a>
                             </div>
                         </div>
@@ -213,21 +187,6 @@ function buscar_libros(){
                 $fecha_libro=$row['fecha_libro'];
                 $html_libro=$row['html_libro'];
                 
-                if(!isset($_SESSION['username_usuario'])){
-                    echo "<div class='col-md-4 box'>
-                        <div class='image'>
-                            <img src='./admin_area/portadas_libros/$portada_libro' alt=''>
-                        </div>
-                        <div class='content'>
-                            <h3>$autor_libro</h3>
-                            <div class='genre'>$titulo_libro</div>
-                            <div class='icons'>
-                                <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a><br>
-                                <a href='detalles_libro.php?id_libro=$id_libro' class='btn'>Detalles</a>
-                            </div>
-                        </div>
-                    </div>";
-                }else{
                     echo "<div class='col-md-4 box'>
                         <div class='image'>
                             <img src='./admin_area/portadas_libros/$portada_libro' alt=''>
@@ -237,15 +196,16 @@ function buscar_libros(){
                             <div class='genre'>$titulo_libro</div>
                             <div class='icons'>
                                 <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a>
-                                <a href='catalog.php?add_to_favoritos=$id_libro' class='fas fa-heart'></a>
                                 <a href='./admin_area/pdfs_libros/$pdf_libro' download='$pdf_libro' class='fas fa-download'></a>
+                            <br>
+
                                 <a href='detalles_libro.php?id_libro=$id_libro' class='btn'>Detalles</a>
                             </div>
                         </div>
                     </div>";
                 }
 
-}}}
+}}
 
 // detalles libro
 function detalles_libro(){
@@ -275,7 +235,6 @@ function detalles_libro(){
                 while ($row=mysqli_fetch_assoc($result_query)){
                 $genero_titulo=$row['genero_titulo'];
 
-                if(!isset($_SESSION['username_usuario'])){
                     echo "<section class='inicio2' id='inicio2'>
                     <div class='heading'>
                         <span>$titulo_libro</span>
@@ -292,30 +251,6 @@ function detalles_libro(){
                                 <br><br>
                                         <span>Leer en línea: <span>
                                         <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a>
-                                    </div>
-                        </div>
-                    </div>
-                </div>";
-                }else{
-                    echo "<section class='inicio2' id='inicio2'>
-                    <div class='heading'>
-                        <span>$titulo_libro</span>
-                    </div>
-                </section>
-                <section class='detalles row'>
-                <div class='col-md-4'>
-                    <div class='row detalles-portada'>
-                        <!-- portada -->
-                        <div class='box'>
-                            <img src='./admin_area/portadas_libros/$portada_libro' alt=''>
-                            <div class='icons'>
-                                <span>$autor_libro</span>
-                                <br><br>
-                                        <span>Leer en línea: <span>
-                                        <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a>
-                                        <br>
-                                        <span>Marcar favorito: <span>
-                                        <a href='catalog.php?add_to_favoritos=$id_libro' class='fas fa-heart'></a>
                                         <br>
                                         <span>Descargar PDF: <span>
                                         <a href='./admin_area/pdfs_libros/$pdf_libro' download='$pdf_libro' class='fas fa-download'></a>
@@ -357,142 +292,9 @@ function detalles_libro(){
             <!--<iframe src='./admin_area/pdfs_libros/$pdf_libro' width='800' height='1000'></iframe>
             <iframe src='./admin_area/htmls_libros/$html_libro'  width='800' height='1000'></iframe>-->
             </section>";
-}}}}
-
-
-// get ip
-
-function getIPAddress(){
-    // wheter ip is from the share internet
-    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-        $get_ip=$_SERVER['HTTP_CLIENT_IP'];
-    }
-    // whether ip is from the remote address
-    elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-        $get_ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
-    }
-    // wheter ip is from remote address
-    else{
-        $get_ip=$_SERVER['REMOTE_ADDR'];
-    }
-    return $get_ip;
-}
-// $get_ip=getIPAddress();
-// echo 'user Real ip Address - '.$get_ip;
-
-function favoritos_save(){
-    if(isset($_GET['add_to_favoritos'])){
-        global $con;
-        $get_ip=getIPAddress();
-        $get_libro_id=$_GET['add_to_favoritos'];
-        $select_query="SELECT * FROM `favoritos` WHERE direccion_ip='$get_ip' AND id_libro=$get_libro_id";
-        $result_query=mysqli_query($con,$select_query);
-        $num_of_rows=mysqli_num_rows($result_query);
-        if($num_of_rows>0){
-            echo "<script>alert('Este Libro ya fue guardado previamente.')</script>";
-            echo "<script>window.open('catalog.php','_self')</script>";
-        }else{
-            $insert_query="INSERT into `favoritos`(id_libro,direccion_ip) values ($get_libro_id,'$get_ip')";
-            $result_query=mysqli_query($con,$insert_query);
-            echo "<script>alert('El libro ha sido añadido a favoritos con éxito.')</script>";
-            echo "<script>window.open('catalog.php','_self')</script>";
-            
-        }
-    }
-}
-
-// function to get favoritos number
-function favoritos_acum(){
-    if(isset($_GET['add_to_favoritos'])){
-        global $con;
-        $get_ip=getIPAddress();
-        $select_query="SELECT * FROM `favoritos` WHERE direccion_ip='$get_ip'";
-        $result_query=mysqli_query($con,$select_query);
-        $count_fav_items=mysqli_num_rows($result_query);
-    }else{
-        global $con;
-        $get_ip=getIPAddress();
-        $select_query="SELECT * FROM `favoritos` WHERE direccion_ip='$get_ip'";
-        $result_query=mysqli_query($con,$select_query);
-        $count_fav_items=mysqli_num_rows($result_query);
-        }
-    echo $count_fav_items;
-    }
+}}}
 
 
 
-function favoritos_item(){
-    global $con;
-    $get_ip = getIPAddress();
-    $favoritos_query = "SELECT * from `favoritos` where direccion_ip='$get_ip' ";
-    $result_query = mysqli_query($con, $favoritos_query);
-    $result_count=mysqli_num_rows($result_query);
-    if($result_count> 0){
-        echo "<thead>
-        <tr>
-            <th>Titulo libro</th>
-            <th>Portada</th>
-            <th>Acceso Directo</th>
-            <th>Leer Online</th>
-            <th>Seleccionar</th>
-            <th>Operaciones</th>
-        </tr>
-    </thead>
-    <tbody>";
-        while ($favoritos_row = mysqli_fetch_assoc($result_query)) {
-            $id_libro = $favoritos_row["id_libro"];
-            $select_libro = "SELECT * from `libros` where id_libro='$id_libro'";
-            $result_libro = mysqli_query($con, $select_libro);
-            while ($libro_row = mysqli_fetch_assoc($result_libro)) {
-                $id_libro = $libro_row['id_libro'];
-                $titulo_libro = $libro_row['titulo_libro'];
-                $genero_id = $libro_row['genero_id'];
-                $portada_libro = $libro_row['portada_libro'];
-                $pdf_libro = $libro_row['pdf_libro'];
-                $fecha_libro = $libro_row['fecha_libro'];
-                $html_libro = $libro_row['html_libro'];
-
-                $genero_id = $libro_row['genero_id'];
-                $select_query = "SELECT * FROM `generos` WHERE genero_id=$genero_id";
-                $result_genero = mysqli_query($con, $select_query);
-                while ($genero_row = mysqli_fetch_assoc($result_genero)) {
-                    $genero_titulo = $genero_row['genero_titulo'];
-                }
-            echo "
-            <tr>
-            <td>$titulo_libro</td>
-            <td class='image'><img src='./admin_area/portadas_libros/$portada_libro' alt='' ></td>
-            <td><a href='detalles_libro.php?id_libro=$id_libro'><i class='fas fa-eye'></i></a></td>
-            <td><a href='./admin_area/htmls_libros/$html_libro'><i class='fas fa-book-open-reader'></i></a></td>
-            <form method='post' action=''>
-            <td><input type='checkbox' name='eliminar_libro[]' value='$id_libro'></td>
-            <td><input type='submit' value='Eliminar de Favoritos' class='btn' name='eliminar_de_favoritos'>
-            </td> 
-        </form>
-        <tr>
-        </tbody>";
-            }
-        }
-    }else{
-        echo "<h2 style='font-size:5rem; color:#52796F;'>No hay Favoritos.<h2>";
-    }
-}
-
-
-// function to remove books from favourite
-function eliminar_favoritos(){
-    global $con;
-    if(isset($_POST['eliminar_de_favoritos'])){
-        foreach($_POST['eliminar_libro'] as $remove_id){
-            echo $remove_id;
-            $delete_query="DELETE from `favoritos` where id_libro=$remove_id";
-            $run_delete=mysqli_query($con, $delete_query);
-            if($run_delete){
-                echo"<script>alert('Eliminado de Favoritos Exitosamente')</script>";
-                echo"<script>window.open('favoritos.php','_self')</script>";
-            }
-        }
-    }
-}
 
 ?>

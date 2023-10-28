@@ -51,7 +51,7 @@ libros_az_especificos();
 mostrarlibros();
 
 
-favoritos_save();
+
 ?>
 </div>
     </div>

@@ -12,16 +12,6 @@
 
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
-            <a href="./favoritos.php" class="fas fa-heart">
-            </a>
-            <?php 
-            if(!isset($_SESSION['username_usuario'])){
-                echo"<div id='login-btn' class='fas fa-user'></div>";
-            }else{
-                echo"<a href='perfil.php' class='fas fa-user'></a>";
-                echo"<a href='./user_area/logout.php' class='fas fa-right-from-bracket'></a>";
-            }
-            ?>
         </div>
     </div>
 <!--ACCESOS RÁPIDOS INICIA-->
@@ -45,9 +35,6 @@
 </nav>
 <!--ACCESOS RÁPIDOS (PARA CELULAR) TERMINA-->
 
-<?php
-include('./user_area/user_login.php');
-?>
 
 
 <!--HEADER TERMINA -->

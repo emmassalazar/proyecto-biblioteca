@@ -68,8 +68,8 @@ include('./funciones/funciones_comunes.php');
     <div class="icons">
         <i class="fas fa-hand-holding-heart"></i>
         <div class="content">
-            <h3>Favoritos<h3>
-                <p>Guarda tus libros favoritos en tu biblioteca personal</p>
+            <h3>Sin usuarios<h3>
+                <p>No necesitas registrarte</p>
         </div>
     </div>
 </section>

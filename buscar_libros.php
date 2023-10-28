@@ -50,7 +50,6 @@ buscar_libros();
 libros_generos_especificos();
 libros_az_especificos();
 
-favoritos_save();
 ?>
 
 

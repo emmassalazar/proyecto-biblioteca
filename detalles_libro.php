@@ -32,7 +32,7 @@ include('funciones/funciones_comunes.php');
 <!-- DETALLES LIBRO INICIA -->
 <?php
 detalles_libro();
-favoritos_save();
+
 ?>
 <!-- DETALLES LIBRO TERMINA -->
 
