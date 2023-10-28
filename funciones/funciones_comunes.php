@@ -144,21 +144,6 @@ function libros_az_especificos(){
                 $pdf_libro=$row['pdf_libro'];
                 $fecha_libro=$row['fecha_libro'];
                 $html_libro=$row['html_libro'];
-                if(!isset($_SESSION['username_usuario'])){
-                    echo "<div class='col-md-4 box'>
-                        <div class='image'>
-                            <img src='./admin_area/portadas_libros/$portada_libro' alt=''>
-                        </div>
-                        <div class='content'>
-                            <h3>$autor_libro</h3>
-                            <div class='genre'>$titulo_libro</div>
-                            <div class='icons'>
-                                <a href='./admin_area/htmls_libros/$html_libro' class='fas fa-book-open-reader'></a><br>
-                                <a href='detalles_libro.php?id_libro=$id_libro' class='btn'>Detalles</a>
-                            </div>
-                        </div>
-                    </div>";
-                }else{
                     echo "<div class='col-md-4 box'>
                         <div class='image'>
                             <img src='./admin_area/portadas_libros/$portada_libro' alt=''>
@@ -175,7 +160,7 @@ function libros_az_especificos(){
                         </div>
                     </div>";
                 }
-}}}
+}}
 
 
 function mostrargeneros(){
