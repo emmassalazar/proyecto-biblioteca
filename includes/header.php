@@ -19,8 +19,8 @@
         <nav class="navbar">
             <a href="main.php">Inicio</a>
             <a href="catalog.php">Catálogo</a>
-            <a href="#">Ingresos Recientes</a>
-            <a href="#">Populares</a>
+            <a href="main.php#recientes">Ingresos Recientes</a>
+            <a href="main.php#manuales">Manuales Técnicos</a>
         </nav>
     </div>
 <!--ACCESOS RÁPIDOS TERMINA-->
@@ -29,8 +29,8 @@
 <nav class="bottom-navbar">
     <a href="main.php" class="fas fa-home"></a>
     <a href="catalog.php" class="fas fa-list"></a>
-    <!-- <a href="" class="fas fa-tags"></a> -->
-    <!-- <a href="" class="fas fa-wrench"></a> -->
+    <!-- <a href="main.php#recientes" class="fas fa-clock-rotate-left"></a>
+    <a href="main.php#manuales" class="fas fa-screwdriver-wrench"></a> -->
     
 </nav>
 <!--ACCESOS RÁPIDOS (PARA CELULAR) TERMINA-->

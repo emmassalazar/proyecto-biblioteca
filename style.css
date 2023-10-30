@@ -200,106 +200,14 @@ section{
 .bottom-navbar a:hover{
 background: var(--dark-color);
 }
-  
-/*FORMULARIO LOG IN*/
-.login-form-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,.9);
-  position: fixed;
-  top:0; right:-105%;
-  z-index:10000;
-  height: 100%; width: 100%;
-}
 
-.login-form-container.active{
-  right: 0%;
-}
-
-.login-form-container form{
-  background: #fff;
-  border:var(--border);
-  width: 40rem;
-  padding:2rem;
-  box-shadow: var(--box-shadow);
-  border-radius: .5rem;
-  margin:2rem;
-}
-.login-form-container form h3{
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  color:var(--black);
-  text-align: center;
-}
-.login-form-container form label{
-  display:block;
-  font-size: 1.5rem;
-  padding-top:1rem;
-}
-.login-form-container form .box{
-  margin:.7rem 0;
-  font-size: 1.6rem;
-  border:var(--border);
-  border-radius: .5rem;
-  padding: 1rem 1.2rem;
-  color:var(--black);
-  text-transform: none;
-  width: 100%;
-}
-.login-form-container form .checkbox{
-  display: flex;
-  align-items:center;
-  gap:.5rem;
-  padding:1rem 0;
-}
-.login-form-container form .checkbox label{
-  font-size: 1.5rem;
-  color:var(--dark-color);
-  cursor: pointer;
-}
-
-.login-form-container form .btn{
-  text-align: center;
-  width: 100%;
-  margin:1.5rem 0;
-
-  margin-top: 1rem;
-  display: inline-block;
-  padding: .9rem 3rem;
-  border-radius:.5rem;
-  color: #fff;
-  background: var(--maincolor);
-  font-size: 1.7rem;
-  cursor: pointer;
-  font-weight: 500;
-}
-.login-form-container form .btn:hover{
-  background: var(--dark-color);
-  color:#fff;
-}
-.login-form-container form p{
-  padding-top: .8rem;
-  font-size: 1.5rem;
-}
-.login-form-container form p a{
-  color:var(--maincolor);
-  font-size: 2rem;
-}
-.login-form-container #close-login-btn{
-  position: absolute;
-  top: 1.5rem; right: 2.5rem;
-  font-size: 5rem;
-  color:var(--black);
-  cursor: pointer;
-}
 
 /*BODY PORTADA*/
 
 .inicio1{
   display: flex;
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
   background:url('./static_images/biblioteca1.jpg') no-repeat;
   background-size: cover;
   background-position: center;
@@ -370,8 +278,22 @@ background: var(--dark-color);
 }
 
 /*POPULARES INICIA*/
+.populares{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.populares .populares-slider{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  gap: 2rem;
+}
 .populares .populares-slider .box{
   width: 25rem;
+  height: 50rem;
   margin: 2rem 0;
   position: relative;
   overflow:hidden;
@@ -380,11 +302,6 @@ background: var(--dark-color);
 }
 .populares .populares-slider .box:hover{
   border: var(--border);
-}
-.swiper-wrapper{
-  gap: 3rem;
-  align-items: center;
-  justify-content: center;
 }
 .populares .populares-slider .box .image{
   padding: 1rem;
@@ -449,18 +366,6 @@ color:#fff
   color:#fff;
 
 }
-.swiper-button-next, .swiper-button-prev{
-  border: var(--border-hover);
-  height: 4rem; width: 4rem;
-  color: #1A2023;background: #fff;
-  font-size: 4rem;
-}
-.swiper-button-next::after, .swiper-button-prev::after{
-font-size: 2rem;
-}
-.swiper-button-next:hover, .swiper-button-prev:hover{
-  background: var(--black); color:var(--light-color);
-  }
 
 /*SECCION SUGERENCIAS*/
 .sugerencias{
@@ -510,7 +415,7 @@ font-size: 2rem;
 }
 
 
-/*SECCION INGRESOS RECIENTES*/
+/* SECCION INGRESOS RECIENTES
 .nuevosingresos .nuevosingresos-slider .box{
   display: flex;
   align-items: center;
@@ -538,7 +443,7 @@ font-size: 2rem;
   font-size: 2.2rem;
   color: var(--black);
   padding-bottom: .5rem;
-}
+} */
 
 /*SECCIÓN ANUNCIO*/
 .anuncio{
@@ -591,41 +496,6 @@ width: 100%;
 
 }
 
-/*SECCION BLOGS*/
-.blogs .blogs-slider .box{
-  margin:2rem 0;
-  border:var(--border-hover);
-}
-.blogs .blogs-slider .box:hover{
-  border: var(--border);
-}
-.blogs .blogs-slider .box .image{
-  height: 25rem;
-  width: 100%;
-  overflow: hidden;
-}
-.blogs .blogs-slider .box .image img{
-  height: 100%;width: 100%;
-  overflow: hidden;
-  object-fit: cover;
-}
-.blogs .blogs-slider .box:hover .image img{
-  transform: scale(1.1);
-}
-.tecnica .blogs-slider .box .content{
-  padding:1.5rem;
-}
-.blogs .blogs-slider .box .content h3{
-  font-size: 2.2rem;
-  color: var(--black);
-}
-.blogs .blogs-slider .box .content p{
-  font-size: 1.4rem;
-  color:var(--maincolor);
-  padding:1rem 0;
-  line-height: 2;
-}
-
 /*FOOTER*/
 .footer .box-container{
   display: flex;
@@ -657,72 +527,6 @@ width: 100%;
   border-top: .1rem solid rgb(0, 0, 0,.1);
 }
 
-/*FORMULARIO REGISTRO*/
-.register-form-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.register-form-container form{
-  background: #fff;
-  width: 40rem;
-  padding:2rem;
-  border-radius: .5rem;
-  margin:2rem;
-  border:var(--border);
-  box-shadow: var(--box-shadow);
-
-
-}
-.register-form-container form h3{
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  color:var(--black);
-  text-align: center;
-}
-.register-form-container form label{
-  display:block;
-  font-size: 1.5rem;
-  padding-top:1rem;
-}
-.register-form-container form .box, .register-form-container select{
-  margin:.7rem 0;
-  font-size: 1.6rem;
-  border:var(--border);
-  border-radius: .5rem;
-  padding: 1rem 1.2rem;
-  color:var(--black);
-  text-transform: none;
-  width: 100%;
-}
-.register-form-container form .checkbox{
-  display: flex;
-  align-items:center;
-  gap:.5rem;
-  padding:1rem 0;
-}
-.register-form-container form .checkbox label{
-  font-size: 1.5rem;
-  color:var(--dark-color);
-  cursor: pointer;
-}
-
-.register-form-container form .btn{
-  text-align: center;
-  width: 100%;
-  margin:1.5rem 0;
-
-  margin-top: 1rem;
-  display: inline-block;
-  padding: .9rem 3rem;
-  border-radius:.5rem;
-  color: #fff;
-  background: var(--maincolor);
-  font-size: 1.7rem;
-  cursor: pointer;
-  font-weight: 500;
-}
 .register-form-container form .btn:hover{
   background: var(--dark-color);
   color:#fff;
@@ -760,6 +564,7 @@ width: 100%;
   padding: 1rem;
   background: linear-gradient(15deg, #eee 30%, #fff 30.1%);
   align-self: center;
+
 }
 .catalogo .box .image img{
   height: 25rem;
@@ -781,6 +586,7 @@ width: 100%;
 .catalogo .box .content{
   background: #eee;
   padding: 1.5rem;
+  
 }
 .catalogo .box .content h3{
   font-size: 2rem;
@@ -998,113 +804,7 @@ border:var(--border-hover);
   color:var(--black);
 }
 
-/* FAVORITOS CSS */
-.favoritos{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
 
-
-}
-.favoritos .favoritos-table .btn{
-  margin-top: 1rem;
-  display: inline-block;
-  padding: .9rem 3rem;
-  border-radius:.5rem;
-  color: #fff;
-  background: var(--maincolor);
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: 500;
-
-}
-.favoritos .favoritos-table .btn:hover{
-  background: var(--dark-color);
-  color:#fff;
-}
-.favoritos .favoritos-table .image img{
-  height: 25rem;
-  width: 18rem;
-
-  padding: 2rem;
-}
-.favoritos .favoritos-table thead{
-  font-size: 2rem;
-}
-.favoritos .favoritos-table tbody{
-  font-size: 2rem;
-}
-.favoritos .favoritos-table tbody i{
-  color:var(--maincolor);
-}
-.favoritos .favoritos-table tbody i:hover{
-  color:var(--dark-color);
-}
-
-/*DETALLES_LIBRO*/
-/* detalles side card */
-.perfil .row{
-  gap: 3rem;
-  align-items: center;
-  justify-content: center;
-}
-.perfil .perfil-portada{
-  width: fit-content;
-}
-.perfil .perfil-portada .box img{
-  height: 30rem;
-  width: 30rem;
-}
-.perfil .perfil-portada .box .icons a{
-  color:var(--black);
-  font-size: 2.2rem;
-  padding:1.2rem 1.5rem;
-  text-decoration: none;
-}
-.perfil .perfil-portada .box .icons a:hover{
-  color:var(--maincolor);
-}
-.perfil .perfil-portada .box{
-  background: #eee;
-  padding: 1.5rem;
-  width: 30rem;
-  margin: 2rem 0;
-  position: relative;
-  overflow:hidden;
-  border:var(--border-hover);
-  text-align: center;
-}
-.perfil .perfil-portada .box .icons span{
-  font-size: 2.2rem;
-  color: var(--black);
-  padding-top: 1rem;
-}
-/*tabla detalles*/
-.perfil-tabla{
-  display: flex;
-  gap: 4rem;
-  align-items: baseline;
-  justify-content: center;
-}
-.perfil-tabla .tabla-datos-libro{
-  background-color: #eee;
-  text-align: center;
-  border: var(--border-hover);
-}
-.perfil-tabla .tabla-datos-libro thead{
-  font-size: 2.2rem;
-  color: var(--black);
-  padding-top: 1rem;
-}
-.perfil-tabla .tabla-datos-libro tr th, .perfil-tabla .tabla-datos-libro td{
-padding: 1rem;
-border:var(--border-hover);
-}
-.perfil-tabla .tabla-datos-libro{
-  font-size: 2rem;
-  color:var(--black);
-}
 
 /* VER TODOS LOS LIBROS CSS */
 .todos-libros{
