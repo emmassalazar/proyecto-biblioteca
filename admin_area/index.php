@@ -49,15 +49,14 @@ include('../funciones/funciones_comunes.php');
 
                 <button><a href="index.php?crear_genero" class="btn">Crear Géneros</a></button>
 
-                <button><a href="#" class="btn">Revisar Géneros</a></button>
+                <button><a href="index.php?ver_generos" class="btn">Ver Géneros</a></button>
 
                 <button><a href="index.php?crear_az" class="btn">Crear A-Z</a></button>
 
-                <button><a href="#" class="btn">Revisar A-Z</a></button>
+                <button><a href="index.php?ver_az" class="btn">Ver A-Z</a></button>
 
-                <button><a href="#" class="btn">Lista Usuarios</a></button>
+                <button><a href="index.php?ver_comentarios" class="btn">Ver comentarios</a></button>
 
-                <button><a href="#" class="btn">Cerrar sesión</a></button>
         </div>
     </div>
     <!-- fourth child -->
@@ -77,6 +76,15 @@ include('../funciones/funciones_comunes.php');
 
         if(isset($_GET['editar_libros'])){
             include('editar_libros.php');}
+
+        if(isset($_GET['ver_generos'])){
+            include('ver_generos.php');}
+        
+        if(isset($_GET['ver_comentarios'])){
+                include('ver_comentarios.php');}
+
+        if(isset($_GET['ver_az'])){
+                    include('ver_az.php');}
         
         ?>
     </div>

@@ -120,11 +120,23 @@ include('./funciones/funciones_comunes.php');
 <!-- SECCION POPULARES TERMINA -->
 
 <!--SECCION DE SUGERENCIAS INICIA-->
+<?php 
+if(isset($_POST['comentar'])){
+    $comentario=$_POST['comentario'];
+
+    $upload_comentario="INSERT into `comentarios` (cont_comentario) values ('$comentario')";
+    $result_query=mysqli_query($con,$upload_comentario);
+    if($result_query){
+        echo "<script>alert('Comentario Enviado.')</script>";
+    }
+}
+
+?>
 <section class="sugerencias">
-<form action="">
+<form action="" method="post">
     <h3>Envíanos tus sugerencias</h3>
-    <input type="text" name="" placeholder="Envíanos tus sugerencias" id="" class="box">
-    <input type="submit" value="Enviar" class="btn">
+    <input type="text" name="comentario" placeholder="Envíanos tus sugerencias" id="" class="box">
+    <input type="submit" value="Enviar" class="btn" name="comentar">
 </form>
 </section>
 <!-- SECCION DE SUGERENCIAS TERMINA -->

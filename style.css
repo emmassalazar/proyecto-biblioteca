@@ -293,7 +293,7 @@ background: var(--dark-color);
 }
 .populares .populares-slider .box{
   width: 25rem;
-  height: 50rem;
+  height: max-content;
   margin: 2rem 0;
   position: relative;
   overflow:hidden;

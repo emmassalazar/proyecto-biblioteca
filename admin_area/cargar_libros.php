@@ -29,7 +29,7 @@ if (isset($_POST['cargar_libro'])){
         move_uploaded_file($temp_html_libro,"./htmls_libros/$html_libro");
 
         // insert query
-        $cargar_libro="insert into `libros` (titulo_libro,descripcion_libro,autor_libro,fecha_pub_libro,leng_orig_libro,genero_id,	az_id,	portada_libro,pdf_libro,fecha_libro, pais_libro,html_libro) values('$titulo_libro','$descripcion_libro','$autor_libro','$fecha_pub_libro','$leng_orig_libro','$genero_libro','$az_libro','$portada_libro','$pdf_libro',NOW(),'$pais_libro','$html_libro')";
+        $cargar_libro="INSERT into `libros` (titulo_libro,descripcion_libro,autor_libro,fecha_pub_libro,leng_orig_libro,genero_id,	az_id,	portada_libro,pdf_libro,fecha_libro, pais_libro,html_libro) values('$titulo_libro','$descripcion_libro','$autor_libro','$fecha_pub_libro','$leng_orig_libro','$genero_libro','$az_libro','$portada_libro','$pdf_libro',NOW(),'$pais_libro','$html_libro')";
         $result_query=mysqli_query($con,$cargar_libro);
         if($result_query){
             echo "<script>alert('Libro Cargado con éxito.')</script>";
